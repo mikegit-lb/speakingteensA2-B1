@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A1/A2 English Speaking Lesson Content</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #fcfbfa;
+            @bottom-right {
+                content: counter(page);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 9pt;
+                color: #8c857b;
+            }
+            @bottom-left {
+                content: "A1/A2 Speaking Masterclass • Bridge to B1";
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 9pt;
+                color: #8c857b;
+            }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3d3a36;
+            line-height: 1.6;
+            font-size: 10.5pt;
+        }
+        
+        /* Decorative Header */
+        .header-banner {
+            margin: -20mm -15mm 25px -15mm;
+            padding: 30px 15mm 25px 15mm;
+            background-color: #1e3d59;
+            color: #ffffff;
+            border-bottom: 4px solid #ff6e40;
+        }
+        .header-banner h1 {
+            margin: 0 0 8px 0;
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .header-banner p {
+            margin: 0;
+            font-size: 11pt;
+            color: #e0e7ff;
+            font-style: italic;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 4px solid #1e3d59;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .intro-section p {
+            margin: 0 0 10px 0;
+        }
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Vocabulary Section */
+        .vocab-section {
+            background-color: #f5f7fa;
+            border: 1px solid #e1e8ed;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 30px;
+        }
+        .vocab-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #1e3d59;
+            margin-top: 0;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 5px;
+        }
+        .vocab-grid {
+            display: table;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .vocab-row {
+            display: table-row;
+        }
+        .vocab-cell {
+            display: table-cell;
+            padding: 10px;
+            vertical-align: top;
+            width: 33.33%;
+        }
+        .vocab-cell:not(:last-child) {
+            border-right: 1px solid #e1e8ed;
+        }
+        .word-badge {
+            background-color: #ff6e40;
+            color: white;
+            padding: 2px 8px;
+            font-size: 9pt;
+            font-weight: bold;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .word-name {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #1e3d59;
+            margin: 2px 0;
+        }
+        .word-meta {
+            font-size: 9pt;
+            color: #657786;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .word-def {
+            font-size: 9.5pt;
+            margin-bottom: 8px;
+        }
+        .word-ex {
+            font-size: 9.5pt;
+            color: #475a6b;
+            background-color: #ffffff;
+            padding: 6px;
+            border-left: 2px solid #ff6e40;
+            border-radius: 2px;
+            margin: 0;
+        }
+
+        /* Question Categories */
+        .category-container {
+            margin-bottom: 25px;
+            page-break-inside: auto;
+        }
+        .category-header {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1e3d59;
+            background-color: #e8eef3;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            page-break-after: avoid;
+        }
+        
+        /* Question Blocks */
+        .question-block {
+            background-color: #ffffff;
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .question-text {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #111111;
+            margin: 0 0 8px 0;
+        }
+        .question-text span {
+            color: #ff6e40;
+            margin-right: 5px;
+        }
+        
+        /* Follow-ups and Tips */
+        .meta-container {
+            display: table;
+            width: 100%;
+            margin-top: 8px;
+            border-top: 1px dashed #e6e6e6;
+            padding-top: 8px;
+        }
+        .meta-row {
+            display: table-row;
+        }
+        .meta-cell {
+            display: table-cell;
+            vertical-align: top;
+            font-size: 9.5pt;
+        }
+        .follow-up-cell {
+            width: 55%;
+            padding-right: 15px;
+        }
+        .tip-cell {
+            width: 45%;
+            border-left: 1px solid #eeeeee;
+            padding-left: 15px;
+        }
+        .meta-label {
+            font-weight: bold;
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .label-fu { color: #2e7d32; }
+        .label-tip { color: #c62828; }
+        
+        .meta-content {
+            margin: 0;
+            color: #4f4f4f;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .meta-content li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 3px;
+        }
+        .meta-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #888888;
+        }
+
+        .grammar-note {
+            background-color: #fff8e1;
+            border: 1px solid #ffe082;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 10pt;
+            page-break-inside: avoid;
+        }
+        .grammar-note strong {
+            color: #b78103;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <h1>A1/A2 English Speaking Masterclass</h1>
+        <p>Comprehensive Lesson Content &amp; Guided Prompts for the A2 to B1 Transition</p>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <p><strong>Lesson Objective:</strong> This structured lesson plan contains 20 targeted speaking prompts designed to build conversational confidence, expand grammar flexibility, and push learners from basic communication (A1/A2) toward independent expression (B1).</p>
+        <p><strong>Structure:</strong> The content moves from familiar concrete domains (Background) to future plans (Future), and finishes with foundational hypothetical structures (Second Conditional). Follow-up questions and linguistic tips are embedded to maximize student performance.</p>
+    </div>
+
+    <!-- Vocabulary Section -->
+    <div class="vocab-section">
+        <div class="vocab-title">Vocabulary Upgrade: Bridge to B1</div>
+        <p style="margin: 0 0 12px 0; font-size: 9.5pt; color: #555;">Incorporate these three transitional words into your answers to sound more precise and advanced.</p>
+        <div class="vocab-grid">
+            <div class="vocab-row">
+                <div class="vocab-cell">
+                    <span class="word-badge">Word 1</span>
+                    <div class="word-name">Pursue</div>
+                    <div class="word-meta">verb / pəˈsjuː /</div>
+                    <div class="word-def">To try to achieve or follow something over a long period of time (e.g., a hobby, a career, a goal).</div>
+                    <p class="word-ex"><strong>Use instead of "do" or "try":</strong> "In the future, I want to <em>pursue</em> a degree in design."</p>
+                </div>
+                <div class="vocab-cell">
+                    <span class="word-badge">Word 2</span>
+                    <div class="word-name">Opportunity</div>
+                    <div class="word-meta">noun / ˌɒpəˈtjuːnəti /</div>
+                    <div class="word-def">A chance to do something easily or a situation that makes it possible to achieve a goal.</div>
+                    <p class="word-ex"><strong>Use instead of "good chance":</strong> "Moving to a new city is a great <em>opportunity</em> to learn."</p>
+                </div>
+                <div class="vocab-cell">
+                    <span class="word-badge">Word 3</span>
+                    <div class="word-name">Independent</div>
+                    <div class="word-meta">adjective / ˌɪndɪˈpɛndənt /</div>
+                    <div class="word-def">Not needing other people to help you, look after you, or tell you what to do.</div>
+                    <p class="word-ex"><strong>Use instead of "alone" or "free":</strong> "Living in my own apartment made me very <em>independent</em>."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: BACKGROUND -->
+    <div class="category-container">
+        <div class="category-header">Part 1: Your Background &amp; Personal History (Questions 1–7)</div>
+        
+        <!-- Q1 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q1.</span> Where did you grow up, and what was your favorite part about that place?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Is that place different now compared to when you were a child?</li>
+                            <li>Would you like to live there again in the future? Why or why not?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Practice switching between "I grew up in..." (Past Simple) and description phrases like "There used to be..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q2.</span> What subjects did you enjoy most during your school years?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Who was your favorite teacher and why did you like them?</li>
+                            <li>Do you still use any of those school subjects in your life today?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Don't just list subjects. Use markers like "I found history fascinating because..." to justify your answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q3.</span> Tell me about a childhood hobby that you no longer do.</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Why did you stop practicing that hobby?</li>
+                            <li>How long did you do it before you gave it up?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Use the structure <strong>"used to + verb"</strong> to talk about past routines (e.g., "I used to play collect stamps").</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q4.</span> What is the most memorable trip or vacation you took with your family?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>How did you travel there (by train, plane, car)?</li>
+                            <li>What specific activity made that trip so unforgettable?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Use sequencing words to structure your narrative: <em>First</em>, <em>Then</em>, <em>After that</em>, and <em>Finally</em>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q5.</span> Think about your first job or your first major responsibility. What did you have to do?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Did you feel confident or nervous when you started?</li>
+                            <li>What did you learn from handling that responsibility?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Incorporate the upgrade word <strong>independent</strong> here if the responsibility helped you grow up.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q6.</span> How did you celebrate your birthdays when you were a young child?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Was there a specific cake or gift you remember vividly?</li>
+                            <li>Do you celebrate your birthdays differently now?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Utilize past time expressions clearly: "When I turned seven...", "In those days..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q7.</span> Talk about a piece of technology (like a phone or computer) that you got in the past. How did it change your routine?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>How did you manage before you had that device?</li>
+                            <li>Was it a gift or did you buy it yourself?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Contrast the past and present using "Before I got it, I spent hours..." versus "Now, it only takes..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: FUTURE -->
+    <div class="category-container">
+        <div class="category-header">Part 2: Looking Ahead &amp; Plans for the Future (Questions 8–13)</div>
+        
+        <!-- Q8 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q8.</span> What are your main goals for your professional or academic life over the next year?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>What is the first step you need to take to achieve this?</li>
+                            <li>Who can help you reach these objectives?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">This is a brilliant place to use the new word <strong>pursue</strong> (e.g., "I intend to pursue a certification...").</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q9.</span> Are you planning to visit any new countries or cities soon? Where do you want to go?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>What kind of food do you want to try there?</li>
+                            <li>Are you going to travel alone or with friends/family?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Differentiate between fixed plans (<strong>be going to + verb</strong>) and vague desires (<strong>would like to + verb</strong>).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q10.</span> How do you think your daily routine will change five years from now?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Do you think you will wake up earlier or later than you do now?</li>
+                            <li>Will technology play a bigger role in your future routine?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Use <strong>"will probably"</strong> or <strong>"I think I will..."</strong> for making future predictions about yourself.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q11.</span> Is there a new skill, sport, or language you intend to learn in the future?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Why does this specific skill interest you?</li>
+                            <li>How much time can you realistically spend practicing it each week?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Incorporate your upgrade word <strong>opportunity</strong> here (e.g., "Learning this gives me the opportunity to...").</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q12.</span> Where do you see yourself living when you retire? Describe the house and environment.</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Will it be near the beach, in a quiet countryside, or in a busy city?</li>
+                            <li>What hobbies will you focus on during retirement?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Practice descriptive adjectives for environments: <em>peaceful, bustling, isolated, cozy</em>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q13.</span> Imagine you want to buy something expensive next year. How are you going to save money for it?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>What is the item, and why is it important to you?</li>
+                            <li>Will you cut down on eating out or shopping to save up?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Use structural intention markers like "I plan on cutting back on..." or "I am going to open a savings account."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: HYPOTHETICALS -->
+    <div class="category-container">
+        <div class="category-header">Part 3: Hypotheticals &amp; Imaginative Scenarios (Questions 14–20)</div>
+        
+        <div class="grammar-note">
+            <strong>Grammar Bridge Note (Second Conditional):</strong> When handling these questions, structure your answers using: 
+            <br><span style="font-family: monospace; font-size: 10.5pt; color: #1e3d59; font-weight: bold;">If + Subject + Past Simple (V2), Subject + would + verb</span>
+            <br>Example: <em>"If I <strong>won</strong> the lottery, I <strong>would buy</strong> a new house."</em> (Note: Use <strong>"If I were"</strong> for all subjects when using the verb 'to be').
+        </div>
+
+        <!-- Q14 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q14.</span> If you were the president or leader of your country, what is the very first law you would change?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>How would normal citizens benefit from this rule change?</li>
+                            <li>Do you think it would be easy or difficult to govern a country?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Ensure you say "If I <strong>were</strong> the leader..." instead of "If I was" to display solid B1 control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q15.</span> If you inherited a very large amount of money tomorrow, how would you spend it?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Would you donate a portion of it to a specific charity?</li>
+                            <li>Would you quit your current job or studies immediately?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Combine your upgrade vocabulary: "If I <em>inherited</em> money, I would take the <strong>opportunity</strong> to..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q16.</span> If you could live in any historical era (the past) or the far future, which one would you choose?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>What historical figure or future invention would you want to see?</li>
+                            <li>What things from modern life would you miss the most?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Keep your modal verbs consistent: "If I <strong>could</strong> live..., I <strong>would</strong> choose..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q17.</span> If you met an alien from another planet, what would you tell them about humanity?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Where would you take them to eat their first human meal?</li>
+                            <li>Would you feel scared or excited during this meeting?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Watch out for the past tense verb format after 'If': "If I <strong>met</strong>..." (not meet).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q18.</span> If you woke up tomorrow and suddenly spoke five languages fluently, what would you do?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Which industries or jobs would you want to work in?</li>
+                            <li>Which country would you visit first to try your new languages?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Use <strong>pursue</strong>: "If I spoke five languages, I would definitely <strong>pursue</strong> an international career."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q19.</span> If you were given a chance to change one physical feature or personality trait of yours, what would it be?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>How would changing this trait alter your day-to-day interactions?</li>
+                            <li>Do you think other people notice this trait as much as you do?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Be careful to maintain hypothetical markers: "If I changed it, I <strong>would</strong> feel..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="question-block">
+            <div class="question-text"><span>Q20.</span> If you found an injured, rare animal in your backyard, how would you handle the situation?</div>
+            <div class="meta-container">
+                <div class="meta-row">
+                    <div class="meta-cell follow-up-cell">
+                        <div class="meta-label label-fu">Teacher Follow-ups</div>
+                        <ul class="meta-content">
+                            <li>Who would you call for professional assistance?</li>
+                            <li>Would you attempt to feed it or keep it as an unusual pet?</li>
+                        </ul>
+                    </div>
+                    <div class="meta-cell tip-cell">
+                        <div class="meta-label label-tip">Performance Tip</div>
+                        <p class="meta-content">Ensure proper past tense realization in the conditional clause: "If I <strong>found</strong>..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
